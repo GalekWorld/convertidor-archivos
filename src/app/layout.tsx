@@ -13,6 +13,45 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+import Script from "next/script";
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="es">
+      <body>
+        {children}
+
+        {/* ANUNCIO */}
+        <Script
+          id="ads-script"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              atOptions = {
+                'key' : 'e3aec981126682d0f6c3a2e9f794fd99',
+                'format' : 'iframe',
+                'height' : 250,
+                'width' : 300,
+                'params' : {}
+              };
+            `,
+          }}
+        />
+
+        <Script
+          src="https://www.highperformanceformat.com/e3aec981126682d0f6c3a2e9f794fd99/invoke.js"
+          strategy="afterInteractive"
+        />
+      </body>
+    </html>
+  );
+}
+
+
 export const metadata: Metadata = {
   title: "ConvertPro",
   description: "Convert your files! Jpg a pdf, Mp4 a Mp3 and more.",
