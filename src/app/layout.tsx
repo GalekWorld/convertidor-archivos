@@ -25,25 +25,62 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "ConvertPro",
-  description: "Convert your files! Jpg a pdf, Mp4 a Mp3 and more.",
-  keywords: ["Next.js", "TypeScript", "Tailwind CSS", "shadcn/ui", "React"],
+  title: "ConvertPro - Convertidor de Archivos Online Gratuito",
+  description: "Convierte archivos gratis: JPG a PDF, MP4 a MP3, PNG a JPG y más. Rápido, seguro y sin límites. Más de 10 años de experiencia en conversión de archivos.",
+  keywords: [
+    "convertidor archivos",
+    "jpg a pdf", 
+    "mp4 a mp3",
+    "convertir imagen",
+    "convertir video",
+    "convertidor online gratis",
+    "pdf a jpg",
+    "png a pdf",
+    "convertir archivos online",
+    "extraer audio de video",
+    "cambiar formato archivo",
+    "convertidor de formato",
+    "herramienta conversión"
+  ],
   authors: [{ name: "Dym Team" }],
   icons: {
     icon: "https://i.imgur.com/9MysNF8.jpeg",
   },
   openGraph: {
-    title: "ConvertPro",
-    description: "Convert your files! Jpg a pdf, Mp4 a Mp3 and more.",
-    url: "convertidor-archivos.vercel.app",
+    title: "ConvertPro - Convertidor de Archivos Online Gratuito",
+    description: "Convierte archivos gratis: JPG a PDF, MP4 a MP3, PNG a JPG y más. Rápido, seguro y sin límites.",
+    url: "https://convertidor-archivos.vercel.app",
     siteName: "ConvertidorArchivos",
     type: "website",
+    images: [
+      {
+        url: "https://i.imgur.com/9MysNF8.jpeg",
+        width: 1200,
+        height: 630,
+        alt: "ConvertPro - Convertidor de Archivos Online"
+      }
+    ]
   },
   twitter: {
     card: "summary_large_image",
-    title: "ConvertPro",
-    description: "Convert your files! Jpg a pdf, Mp4 a Mp3 and more.",
+    title: "ConvertPro - Convertidor de Archivos Online Gratuito",
+    description: "Convierte archivos gratis: JPG a PDF, MP4 a MP3, PNG a JPG y más. Rápido, seguro y sin límites.",
+    images: ["https://i.imgur.com/9MysNF8.jpeg"]
   },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  verification: {
+    google: 'your-google-verification-code',
+  }
 };
 
 export default function RootLayout({
@@ -52,7 +89,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="es" suppressHydrationWarning>
       <head>
         <SocialBar />
       </head>
