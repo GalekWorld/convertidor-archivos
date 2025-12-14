@@ -1,7 +1,8 @@
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
-import { ArrowLeft, Mail, Phone, MessageSquare, MapPin, Send, Clock } from 'lucide-react'
+import { Textarea } from '@/components/ui/textarea'
+import { Mail, Phone, MapPin, Clock } from 'lucide-react'
 import Link from 'next/link'
 
 export default function ContactoPage() {
@@ -13,184 +14,96 @@ export default function ContactoPage() {
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
               <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
-                <MessageSquare className="h-4 w-4 text-white" />
+                <Zap className="h-4 w-4 text-white" />
               </div>
-              <span className="text-xl font-bold text-gray-900">ConvertPro - Contacto</span>
+              <span className="text-xl font-bold text-gray-900">ConvertPro</span>
             </div>
-            <Link href="/">
-              <Button variant="outline" className="flex items-center space-x-2">
-                <ArrowLeft className="h-4 w-4" />
-                <span>Volver</span>
-              </Button>
-            </Link>
+            <nav className="hidden md:flex items-center space-x-6">
+              <Link href="/" className="text-gray-600 hover:text-gray-900 transition-colors">Inicio</Link>
+              <Link href="/caracteristicas" className="text-gray-600 hover:text-gray-900 transition-colors">Características</Link>
+              <Link href="/precios" className="text-gray-600 hover:text-gray-900 transition-colors">Precios</Link>
+              <Link href="/soporte" className="text-gray-600 hover:text-gray-900 transition-colors">Soporte</Link>
+              <Link href="/contacto" className="text-gray-600 hover:text-gray-900 transition-colors">Contacto</Link>
+            </nav>
           </div>
         </div>
       </header>
 
-      {/* Hero Section */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 py-16">
+        <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
-            <h1 className="text-5xl font-bold text-gray-900 mb-4">Contacto</h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              ¿Tienes preguntas, sugerencias o necesitas ayuda? Estamos aquí para escucharte. 
-              Tu feedback es importante para mejorar ConvertPro.
-            </p>
+            <h1 className="text-4xl font-bold text-gray-900 mb-4">Contacto</h1>
+            <p className="text-xl text-gray-600">Estamos aquí para ayudarte</p>
           </div>
 
-          <div className="text-center mb-8">
-            <div className="inline-flex items-center space-x-2 bg-yellow-100 text-yellow-800 px-4 py-2 rounded-full">
-              <Clock className="h-5 w-5" />
-              <span className="font-medium">Tiempo de respuesta: menos de 24 horas</span>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
-            {/* Contact Form */}
-            <Card className="shadow-2xl border-0 bg-white">
+          <div className="grid md:grid-cols-2 gap-8">
+            <Card>
               <CardHeader>
-                <CardTitle className="text-2xl font-bold text-gray-900">Envíanos un mensaje</CardTitle>
+                <CardTitle>Envíanos un mensaje</CardTitle>
+                <CardDescription>
+                  Nos pondremos en contacto contigo lo antes posible
+                </CardDescription>
               </CardHeader>
-              <CardContent className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div className="space-y-2">
-                    <label className="text-sm font-medium text-gray-700">Nombre completo</label>
-                    <Input placeholder="Tu nombre" className="h-12" />
-                  </div>
-                  
-                  <div className="space-y-2">
-                    <label className="text-sm font-medium text-gray-700">Correo electrónico</label>
-                    <Input type="email" placeholder="tu@email.com" className="h-12" />
-                  </div>
+              <CardContent className="space-y-4">
+                <div>
+                  <label className="block text-sm font-medium mb-2">Nombre</label>
+                  <Input placeholder="Tu nombre" />
                 </div>
-                
-                <div className="space-y-2">
-                  <label className="text-sm font-medium text-gray-700">Asunto</label>
-                  <Input placeholder="¿Cuál es tu consulta?" className="h-12" />
+                <div>
+                  <label className="block text-sm font-medium mb-2">Email</label>
+                  <Input type="email" placeholder="tu@email.com" />
                 </div>
-                
-                <div className="space-y-2">
-                  <label className="text-sm font-medium text-gray-700">Tipo de consulta</label>
-                  <select className="w-full h-12 px-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                    <option value="">Selecciona una opción</option>
-                    <option value="soporte">Soporte técnico</option>
-                    <option value="sugerencia">Sugerencia</option>
-                    <option value="bug">Reportar un error</option>
-                    <option value="empresa">Consulta empresarial</option>
-                    <option value="otro">Otro</option>
-                  </select>
+                <div>
+                  <label className="block text-sm font-medium mb-2">Mensaje</label>
+                  <Textarea placeholder="Tu mensaje..." rows={4} />
                 </div>
-                
-                <div className="space-y-2">
-                  <label className="text-sm font-medium text-gray-700">Mensaje</label>
-                  <textarea 
-                    placeholder="Describe tu pregunta o problema en detalle..." 
-                    className="w-full h-32 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  />
-                </div>
-                
-                <div className="flex items-center space-x-2">
-                  <input type="checkbox" id="newsletter" className="rounded" />
-                  <label htmlFor="newsletter" className="text-sm text-gray-600">
-                    Quiero recibir noticias y actualizaciones de ConvertPro
-                  </label>
-                </div>
-                
-                <Button className="w-full h-14 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300">
-                  <Send className="mr-3 h-5 w-5" />
+                <Button className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700">
                   Enviar mensaje
                 </Button>
               </CardContent>
             </Card>
 
-            {/* Contact Info */}
             <div className="space-y-6">
-              <Card className="shadow-lg border-0 bg-white">
-                <CardContent className="p-6">
-                  <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
-                      <Mail className="h-6 w-6 text-blue-600" />
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-semibold text-gray-900">Correo electrónico</h3>
-                      <p className="text-gray-600">support@convertpro.com</p>
-                      <p className="text-sm text-gray-500">Respuesta en menos de 24h</p>
-                    </div>
-                  </div>
+              <Card>
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2">
+                    <Mail className="h-5 w-5" />
+                    Email
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p>soporte@convertpro.com</p>
                 </CardContent>
               </Card>
 
-              <Card className="shadow-lg border-0 bg-white">
-                <CardContent className="p-6">
-                  <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
-                      <Phone className="h-6 w-6 text-green-600" />
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-semibold text-gray-900">Teléfono</h3>
-                      <p className="text-gray-600">+1 (555) 123-4567</p>
-                      <p className="text-sm text-gray-500">Lun-Vie 9am-6pm (GMT-5)</p>
-                    </div>
-                  </div>
+              <Card>
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2">
+                    <Clock className="h-5 w-5" />
+                    Horario de atención
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p>Lunes a Viernes: 9:00 - 18:00</p>
+                  <p>Sábado: 10:00 - 14:00</p>
                 </CardContent>
               </Card>
 
-              <Card className="shadow-lg border-0 bg-white">
-                <CardContent className="p-6">
-                  <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center">
-                      <MessageSquare className="h-6 w-6 text-purple-600" />
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-semibold text-gray-900">Chat en vivo</h3>
-                      <p className="text-gray-600">Disponible 24/7</p>
-                      <p className="text-sm text-gray-500">Respuesta inmediata</p>
-                    </div>
-                  </div>
+              <Card>
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2">
+                    <MapPin className="h-5 w-5" />
+                    Ubicación
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p>Atención online 24/7</p>
                 </CardContent>
               </Card>
-
-              <Card className="shadow-lg border-0 bg-white">
-                <CardContent className="p-6">
-                  <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center">
-                      <MapPin className="h-6 w-6 text-orange-600" />
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-semibold text-gray-900">Oficina principal</h3>
-                      <p className="text-gray-600">123 Tech Street</p>
-                      <p className="text-gray-600">Silicon Valley, CA 94025</p>
-                      <p className="text-sm text-gray-500">Estados Unidos</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-
-          {/* Office Hours */}
-          <div className="mt-16 bg-white rounded-2xl shadow-xl p-8 max-w-4xl mx-auto">
-            <h2 className="text-2xl font-bold text-center text-gray-900 mb-8">Horarios de Atención</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="text-center">
-                <h3 className="font-semibold text-gray-900 mb-2">Soporte por Email</h3>
-                <p className="text-gray-600">24/7</p>
-                <p className="text-sm text-gray-500">Respuesta en menos de 24h</p>
-              </div>
-              <div className="text-center">
-                <h3 className="font-semibold text-gray-900 mb-2">Chat en Vivo</h3>
-                <p className="text-gray-600">24/7</p>
-                <p className="text-sm text-gray-500">Respuesta inmediata</p>
-              </div>
-              <div className="text-center">
-                <h3 className="font-semibold text-gray-900 mb-2">Teléfono</h3>
-                <p className="text-gray-600">Lun-Vie</p>
-                <p className="text-sm text-gray-500">9am - 6pm (GMT-5)</p>
-              </div>
             </div>
           </div>
         </div>
-      </section>
+      </div>
     </div>
   )
 }
