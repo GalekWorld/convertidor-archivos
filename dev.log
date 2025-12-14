@@ -1,0 +1,20 @@
+   ▲ Next.js 15.3.5
+   - Local:        http://localhost:3000
+   - Network:      http://192.168.1.162:3000
+   - Environments: .env
+
+ ✓ Starting...
+ ✓ Ready in 3.6s
+ ○ Compiling / ...
+ ✓ Compiled / in 2.7s (939 modules)
+ GET / 200 in 3278ms
+ ○ Compiling /_not-found ...
+ ✓ Compiled /_not-found in 1097ms (943 modules)
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 1419ms
+ ✓ Compiled /caracteristicas in 188ms (516 modules)
+ GET /caracteristicas 404 in 146ms
+ GET /caracteristicas 404 in 165ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 70ms
+ GET / 200 in 313ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 87ms
+[?25h

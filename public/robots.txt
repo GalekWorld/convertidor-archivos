@@ -1,0 +1,27 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://convertidor-pro.com/sitemap.xml
+
+# Ficheros estáticos
+Allow: /static/
+Allow: /images/
+Allow: /favicon.ico
+Allow: /apple-touch-icon.png
+
+# API
+Allow: /api/
+
+# Bloquear bots maliciosos
+Disallow: /admin/
+Disallow: /private/
+Disallow: /.env
+Disallow: /node_modules/
+Disallow: /.next/
+
+# Optimización para crawlers
+Crawl-delay: 1
+
+# Sitemap específico para imágenes
+Sitemap: https://convertidor-pro.com/image-sitemap.xml
