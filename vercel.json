@@ -3,7 +3,7 @@
   "outputDirectory": ".next",
   "installCommand": "npm install",
   "framework": "nextjs",
-  "regions": ["all"],
+  "regions": ["mad1"],
   "functions": {
     "app/api/convert/route.ts": {
       "maxDuration": 30
