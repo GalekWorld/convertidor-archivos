@@ -8,6 +8,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Upload, FileText, Download, Loader2, Image, FileVideo, FileAudio, File, Check, Zap, Shield, Star, X, RefreshCw } from 'lucide-react'
 import { useToast } from '@/hooks/use-toast'
 import Link from 'next/link'
+import Advertisement from '@/components/advertisement'
 
 export default function ConvertidorPage() {
   const [file, setFile] = useState<File | null>(null)
@@ -413,6 +414,9 @@ export default function ConvertidorPage() {
                 </div>
               </CardContent>
             </Card>
+
+            {/* ANUNCIO AÑADIDO JUSTO AQUÍ - DEBAJO DEL BOTÓN DE CONVERTIR */}
+            <Advertisement />
           </div>
         </div>
       </section>
