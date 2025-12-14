@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://convertidor-pro.com/sitemap.xml
+Sitemap: https://convertidor-archivos.vercel.app
 
 # Ficheros estáticos
 Allow: /static/
@@ -24,4 +24,4 @@ Disallow: /.next/
 Crawl-delay: 1
 
 # Sitemap específico para imágenes
-Sitemap: https://convertidor-pro.com/image-sitemap.xml
+Sitemap: https://convertidor-archivos.vercel.app/image-sitemap.xml
