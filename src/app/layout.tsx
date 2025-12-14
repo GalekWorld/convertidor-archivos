@@ -3,6 +3,14 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 
+// Importaciones explícitas de páginas
+import PreciosPage from "./precios";
+import ContactoPage from "./contacto";
+import CaracteristicasPage from "./caracteristicas";
+import SoportePage from "./soporte";
+import PrivacidadPage from "./privacidad";
+import TerminosPage from "./terminos";
+
 // Componente Social Bar
 function SocialBar() {
   return (
